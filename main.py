@@ -8,7 +8,7 @@ import csv
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHANNEL_ID = os.environ["CHANNEL_ID"]
 
-CSV_FILE = "messages.csv"  # Make sure this CSV is in your project folder
+CSV_FILE = r"test - Sheet1.csv"  # Make sure this CSV is in your project folder
 
 # Load messages from CSV
 def load_messages():
