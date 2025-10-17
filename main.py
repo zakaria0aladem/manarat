@@ -34,7 +34,7 @@ async def scheduler():
     while True:
         now = datetime.now()
         # Change hour and minute to your desired sending time
-        if now.hour == 18 and now.minute == 15:
+        if now.hour == 18 and now.minute == 25:
             # Pick message based on the day number
             day_index = (now.toordinal() - 738156) % len(messages)
             await send_message(messages[day_index])
