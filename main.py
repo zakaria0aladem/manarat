@@ -34,12 +34,16 @@ async def scheduler():
     while True:
         now = datetime.now()
         # Change hour and minute to your desired sending time
-        if now.hour == 18 and now.minute == 25:
+        if now.hour == 18 and now.minute == 39:
             # Pick message based on the day number
             day_index = (now.toordinal() - 738156) % len(messages)
             await send_message(messages[day_index])
             await asyncio.sleep(60)  # avoid sending twice in the same minute
         await asyncio.sleep(1)
-
 if __name__ == "__main__":
+    # Test message on startup
+    asyncio.run(send_message("✅ Test message from Railway deployment"))
+
+    # Start daily scheduler
     asyncio.run(scheduler())
+
